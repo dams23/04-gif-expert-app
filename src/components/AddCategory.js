@@ -8,12 +8,13 @@ const AddCategory = ({ setCategories }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (inputValue.trim().length > 2) {
-            setCategories(cats => [inputValue,...cats ]);
+            setCategories(cats => [inputValue, ...cats]);
             setInputValue('');
         }
     }
     return (
         <form onSubmit={handleSubmit}>
+            <p> {inputValue}</p>
             <input
                 type='text'
                 value={inputValue}
@@ -22,7 +23,7 @@ const AddCategory = ({ setCategories }) => {
         </form>
     )
 };
-AddCategory.propTypes ={
-    setCategories : PropTypes.func.isRequired,
+AddCategory.propTypes = {
+    setCategories: PropTypes.func.isRequired,
 };
 export default AddCategory;
